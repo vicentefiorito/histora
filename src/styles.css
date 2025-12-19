@@ -130,7 +130,10 @@ code {
   --color-cream-100: #f4ede4; /* cards, panels */
   --color-cream-200: #e8dccb; /* subtle borders */
   --color-maroon: #5b1f1f;
+  --color-maroon-text: #3d2817;
+  --color-maroon-100: #5d4a35;
   --color-maroon-hover: #6b2f2f; /* maroon hover */
+  --color-gold-50: #e8dcc8; /* gold background */
   --color-gold-100: #c9a961 /* gold accents */;
 }
 

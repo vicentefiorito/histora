@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router'
-import { BookUser, Home, Mountain, X } from 'lucide-react'
+import { BookUser, Home, Mountain, Swords, X } from 'lucide-react'
 
 type NavbarLink = {
   title: string
@@ -20,6 +20,7 @@ const links: NavbarLink[] = [
     icon: <BookUser size={20} />,
   },
   { title: 'Places', href: '/places', icon: <Mountain size={20} /> },
+  { title: 'Events & Conflicts', href: '/events', icon: <Swords size={20} /> },
 ]
 
 export default function Navbar({ onClick, isOpen }: NavbarProps) {

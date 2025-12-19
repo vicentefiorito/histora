@@ -1,11 +1,10 @@
+import FeaturesSection from '@/components/FeaturesSection'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({ component: HistoraLandingMock })
 
 import {
-  ArrowRight,
   BookOpen,
-  Compass,
   FlaskConical,
   Globe2,
   Landmark,
@@ -213,29 +212,6 @@ function clamp(n: number, min: number, max: number) {
 function formatYear(y: number) {
   if (y < 0) return `${Math.abs(y)} BCE`
   return `${y} CE`
-}
-
-function PaperGrain() {
-  return (
-    <div className="pointer-events-none absolute inset-0 opacity-[0.10]">
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 20% 10%, rgba(255,255,255,0.75), transparent 45%), radial-gradient(circle at 80% 25%, rgba(0,0,0,0.05), transparent 55%), radial-gradient(circle at 40% 80%, rgba(0,0,0,0.04), transparent 55%)',
-        }}
-      />
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            'linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px)',
-          backgroundSize: '48px 48px',
-          opacity: 0.25,
-        }}
-      />
-    </div>
-  )
 }
 
 // function StatPill({ icon: Icon, label, value }: any) {
@@ -468,13 +444,8 @@ export default function HistoraLandingMock() {
   }, [yearClamped, eraObj])
 
   return (
-    <div
-      className="min-h-screen"
-      style={{ background: CREAM, color: '#2b2b2b' }}
-    >
+    <div className="min-h-screen bg-cream-50">
       <div className="relative">
-        <PaperGrain />
-
         {/* Hero */}
         <section
           id="explore"
@@ -501,19 +472,14 @@ export default function HistoraLandingMock() {
                 connections with sources. Build collections, compare figures,
                 and switch lenses anytime.
               </p>
-
-              {/* CTA row */}
-              {/* <div className="mt-7 flex flex-wrap items-center gap-3">
-                <button
-                  className="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold shadow-sm"
-                  style={{ background: MAROON, color: CREAM }}
-                >
-                  Start exploring <ArrowRight className="h-4 w-4" />
-                </button>
-              </div> */}
             </div>
           </div>
         </section>
+
+        {/* features section */}
+        <div className="flex items-center justify-center p-4 max-w-350 mx-auto">
+          <FeaturesSection />
+        </div>
       </div>
     </div>
   )

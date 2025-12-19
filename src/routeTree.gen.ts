@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PlacesRouteImport } from './routes/places'
 import { Route as FiguresRouteImport } from './routes/figures'
+import { Route as EventsRouteImport } from './routes/events'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DemoTanstackQueryRouteImport } from './routes/demo/tanstack-query'
 import { Route as DemoStartServerFuncsRouteImport } from './routes/demo/start.server-funcs'
@@ -30,6 +31,11 @@ const PlacesRoute = PlacesRouteImport.update({
 const FiguresRoute = FiguresRouteImport.update({
   id: '/figures',
   path: '/figures',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -85,6 +91,7 @@ const DemoStartSsrDataOnlyRoute = DemoStartSsrDataOnlyRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/events': typeof EventsRoute
   '/figures': typeof FiguresRoute
   '/places': typeof PlacesRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
@@ -99,6 +106,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/events': typeof EventsRoute
   '/figures': typeof FiguresRoute
   '/places': typeof PlacesRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
@@ -114,6 +122,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/events': typeof EventsRoute
   '/figures': typeof FiguresRoute
   '/places': typeof PlacesRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
@@ -130,6 +139,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/events'
     | '/figures'
     | '/places'
     | '/demo/tanstack-query'
@@ -144,6 +154,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/events'
     | '/figures'
     | '/places'
     | '/demo/tanstack-query'
@@ -158,6 +169,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/events'
     | '/figures'
     | '/places'
     | '/demo/tanstack-query'
@@ -173,6 +185,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  EventsRoute: typeof EventsRoute
   FiguresRoute: typeof FiguresRoute
   PlacesRoute: typeof PlacesRoute
   DemoTanstackQueryRoute: typeof DemoTanstackQueryRoute
@@ -200,6 +213,13 @@ declare module '@tanstack/react-router' {
       path: '/figures'
       fullPath: '/figures'
       preLoaderRoute: typeof FiguresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -277,6 +297,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  EventsRoute: EventsRoute,
   FiguresRoute: FiguresRoute,
   PlacesRoute: PlacesRoute,
   DemoTanstackQueryRoute: DemoTanstackQueryRoute,

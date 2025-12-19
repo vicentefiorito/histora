@@ -5,7 +5,9 @@ export const Route = createFileRoute('/figures')({
 })
 
 function RouteComponent() {
-  return <div className='p-3 border-stone-400'>
-    <h1 className='text-center'>Current Figures</h1>
-  </div>
+  return (
+    <div className="min-h-screen bg-cream-50">
+      <h1 className="text-center">Current Figures</h1>
+    </div>
+  )
 }
