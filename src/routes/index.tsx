@@ -1,7 +1,11 @@
 import FeaturesSection from '@/components/FeaturesSection'
+import { getTodayInHistory } from '@/server/todayInHistory'
 import { createFileRoute } from '@tanstack/react-router'
 
-export const Route = createFileRoute('/')({ component: HistoraLandingMock })
+export const Route = createFileRoute('/')({
+  component: HistoraLandingMock,
+  // loader: () => getTodayInHistory(),
+})
 
 import {
   BookOpen,
@@ -452,15 +456,8 @@ export default function HistoraLandingMock() {
           className="mx-auto max-w-7xl px-4 pb-16 pt-10 md:pt-14"
         >
           <div className="grid items-start gap-10 md:grid-cols-2">
-            {/* Left */}
             <div>
-              <h1
-                className="text-4xl font-semibold leading-tight md:text-5xl"
-                style={{
-                  fontFamily:
-                    "ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif",
-                }}
-              >
+              <h1 className="text-4xl font-semibold leading-tight md:text-5xl">
                 History, alive in <span style={{ color: INK }}>time</span> and{' '}
                 <span style={{ color: INK }}>place</span>.
               </h1>

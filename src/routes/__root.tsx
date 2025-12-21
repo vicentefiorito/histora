@@ -49,7 +49,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body
+        style={{
+          fontFamily:
+            "ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif",
+        }}
+      >
         <Header />
         {children}
         <TanStackDevtools

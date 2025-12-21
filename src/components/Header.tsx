@@ -9,7 +9,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="p-4 flex items-center bg-maroon text-white shadow-lg border-b border-gold-100">
+      <header className="p-4 flex items-center bg-maroon text-white shadow-lg border-b border-gold-100 sticky top-0 z-2">
         {/* Hamburger Menu */}
         <button
           onClick={() => setIsOpen(true)}

@@ -14,9 +14,18 @@ export default function FeatureCard({
   imageUrl,
 }: FeatureCardProps) {
   return (
-    <Card className="aspect-square max-h-95 w-full bg-white p-2 border-2 rounded-md border-gold-50 hover:-translate-y-1 hover:border-gold-100 transition-all hover:duration-500">
+    <Card className="aspect-square max-h-100 w-full bg-white p-4 border-2 rounded-md border-gold-50 hover:-translate-y-1 hover:border-gold-100 transition-all hover:duration-500">
       <CardContent>
-        <h3 className="text-2xl font-bold mb-4 mt-20">{title}</h3>
+        {imageUrl && (
+          <div className="w-full h-40 overflow-hidden">
+            <img
+              src={imageUrl}
+              alt={title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        )}
+        <h3 className="text-2xl font-bold mb-4 mt-4">{title}</h3>
         <p>{description}</p>
       </CardContent>
       <CardFooter className="flex justify-end items-end mt-auto mb-6">

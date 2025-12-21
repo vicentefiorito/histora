@@ -14,6 +14,7 @@ const features = [
     description:
       'Explore the locations where history unfolded. See how geography shaped events and influenced the lives of historical figures.',
     cta: 'Explore Places',
+    imageUrl: '/public/assets/landing_places.jpg',
   },
   {
     id: 3,
@@ -41,6 +42,7 @@ export default function FeaturesSection() {
             title={feature.title}
             description={feature.description}
             cta={feature.cta}
+            imageUrl={feature.imageUrl ?? ''}
           />
         ))}
       </div>
