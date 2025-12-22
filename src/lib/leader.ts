@@ -1,70 +1,60 @@
+import type { Figure } from '@/components/FigureCard'
+
 export const LEADERS = [
   {
     id: 'caesar',
     name: 'Julius Caesar',
     title: 'Dictator Perpetuo',
-    era: 'Classical Era',
-    parents: ['Gaius Julius Caesar', 'Aurelia Cotta'],
-    children: ['Julia', 'Caesarion', 'Augustus (Adopted)'],
-    conquests: ['Gaul', 'Britannia', 'Egypt', 'Hispania', 'Italy'],
-    events: [
-      { year: '100 BC', event: 'Born into the Subura district of Rome.' },
-      { year: '58 BC', event: 'Initiates the Gallic Wars, expanding Roman borders.' },
-      { year: '49 BC', event: 'Crosses the Rubicon, triggering the Civil War.' },
-      { year: '44 BC', event: 'Assassinated on the Ides of March by the Senate.' }
-    ],
-    attributes: [95, 80, 90, 70, 85, 60],
-    footprint: [90, 10, 50, 0, 0, 100], 
+    birthYear: -100,
+    deathYear: -44,
+    region: 'Rome',
+    association: 'Roman Republic',
+    influenceStart: -60,
+    influenceEnd: -44,
+    thumbUrl:
+      'https://render.fineartamerica.com/images/rendered/default/print/6/8/break/images/artworkimages/medium/3/the-emperor-gaius-julius-caesar-peter-paul-rubens.jpg',
+    synopsis: `Julius Caesar was a Roman general and statesman who played a crucial role in the transformation of the Roman Republic into the Roman Empire. He was appointed dictator perpetuo in 44 BCE, which effectively made him the absolute ruler of Rome. His military conquests, political reforms, and personal charisma left an indelible mark on Roman history and beyond.`,
   },
   {
     id: 'genghis',
     name: 'Genghis Khan',
     title: 'Khagan of the Mongols',
-    era: 'Medieval Era',
-    parents: ['Yesugei Baghatur', 'Hoelun'],
-    children: ['Jochi', 'Chagatai', 'Ogedei', 'Tolui'],
-    conquests: ['Central Asia', 'Northern China', 'Persia', 'Caucasus'],
-    events: [
-      { year: '1162', event: 'Born as Temujin on the Mongolian Steppe.' },
-      { year: '1206', event: 'Unites the tribes and is proclaimed Universal Ruler.' },
-      { year: '1211', event: 'Launches invasion of the Jin Dynasty.' },
-      { year: '1227', event: 'Dies during the campaign against the Western Xia.' }
-    ],
-    attributes: [100, 75, 85, 80, 70, 90],
-    footprint: [20, 100, 5, 0, 0, 10],
+    birthYear: 1162,
+    deathYear: 1227,
+    region: 'Mongolia',
+    association: 'Mongol Empire',
+    influenceStart: 1206,
+    influenceEnd: 1227,
+    thumbUrl:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLmPCCUXBed77Zfhu3kAKl_KY1TI8jd7J9Mw&s',
+    synopsis: `Genghis Khan was the founder of the Mongol Empire, which became the largest contiguous land empire in history. He unified the Mongol tribes and launched invasions that stretched from Eastern Europe to East Asia, leaving a profound impact on the political, cultural, and economic landscape of Eurasia.`,
   },
   {
     id: 'victoria',
     name: 'Queen Victoria',
     title: 'Empress of India',
-    era: 'Industrial Era',
-    parents: ['Prince Edward', 'Princess Victoria of Saxe-Coburg'],
-    children: ['Victoria', 'Edward VII', 'Alice', 'Alfred', 'Helena', 'Louise', 'Arthur', 'Leopold', 'Beatrice'],
-    conquests: ['British Raj', 'Sudan Theater', 'Upper Burma', 'Cyprus'],
-    events: [
-      { year: '1837', event: 'Ascends to the throne at age 18.' },
-      { year: '1840', event: 'Marries Prince Albert of Saxe-Coburg and Gotha.' },
-      { year: '1876', event: 'Proclaimed Empress of India by Parliament.' },
-      { year: '1901', event: 'Passes away, ending the longest reign in British history.' }
-    ],
-    attributes: [40, 85, 90, 80, 95, 100],
-    footprint: [100, 80, 90, 70, 90, 60],
+    birthYear: 1837,
+    deathYear: 1901,
+    region: 'United Kingdom',
+    association: 'British Empire',
+    influenceStart: 1837,
+    influenceEnd: 1901,
+    thumbUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/e/e3/Queen_Victoria_by_Bassano.jpg',
+    synopsis: `Queen Victoria reigned over the British Empire from 1837 to 1901, a period often referred to as the Victorian Era. Her reign saw significant industrial, cultural, political, scientific, and military changes within the United Kingdom and its colonies. Victoria's long rule and the expansion of the British Empire during her reign had a lasting impact on the world.`,
   },
   {
     id: 'alexander',
     name: 'Alexander III',
     title: 'The Great / King of Macedon',
-    era: 'Classical Era',
-    parents: ['Philip II of Macedon', 'Olympias'],
-    children: ['Alexander IV'],
-    conquests: ['Persia', 'Egypt', 'Babylon', 'Bactria', 'Punjab'],
-    events: [
-      { year: '356 BC', event: 'Born in Pella, Macedonia.' },
-      { year: '334 BC', event: 'Invasion of the Achaemenid Persian Empire.' },
-      { year: '331 BC', event: 'Victory at Gaugamela, claiming the title King of Asia.' },
-      { year: '323 BC', event: 'Dies in Babylon at age 32.' }
-    ],
-    attributes: [100, 60, 98, 85, 50, 65],
-    footprint: [60, 90, 50, 5, 5, 80],
-  }
-];
+    birthYear: -356,
+    deathYear: -323,
+    region: 'Macedonia',
+    association: 'Macedonian Empire',
+    influenceStart: -334,
+    influenceEnd: -323,
+    thumbUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Alexander_the_Great_mosaic_%28cropped%29.jpg/250px-Alexander_the_Great_mosaic_%28cropped%29.jpg',
+    synopsis: `Alexander III, known as Alexander the Great, was a Macedonian king who created one of the largest empires of the ancient world. He conquered much of the known world, stretching from Greece to northwestern India, and his conquests had a lasting impact on the development of Greek culture and the spread of Hellenistic civilization.`,
+  },
+]

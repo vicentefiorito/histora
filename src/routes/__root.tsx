@@ -13,6 +13,7 @@ import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
 import appCss from '../styles.css?url'
 
 import type { QueryClient } from '@tanstack/react-query'
+import { PageWrapper } from '@/components/PageWrapper'
 
 interface MyRouterContext {
   queryClient: QueryClient
@@ -56,7 +57,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         }}
       >
         <Header />
-        {children}
+        <PageWrapper>{children}</PageWrapper>
         <TanStackDevtools
           config={{
             position: 'bottom-right',

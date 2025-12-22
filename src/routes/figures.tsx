@@ -1,4 +1,6 @@
+import { FigureCard } from '@/components/FigureCard'
 import FiguresSelect from '@/components/FiguresSelect'
+import { LEADERS } from '@/lib/leader'
 import { SelectOption } from '@/lib/types'
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
@@ -30,7 +32,7 @@ function RouteComponent() {
           across time and continents
         </p>
       </div>
-      <div className="flex justify-center mt-8">
+      <div className="flex justify-center mt-8  ">
         <div className="flex  p-6 bg-white m-4 border-gold-50 border-2 rounded-lg w-400">
           <div className="">
             <FiguresSelect
@@ -41,6 +43,24 @@ function RouteComponent() {
             />
           </div>
         </div>
+      </div>
+      <div className="grid grid-cols-2 max-w-400 mx-auto gap-8 mb-8">
+        {LEADERS.map((leader) => (
+          <FigureCard
+            key={leader.id}
+            association={leader.association}
+            birthYear={leader.birthYear}
+            deathYear={leader.deathYear}
+            id={leader.id}
+            name={leader.name}
+            title={leader.title}
+            region={leader.region}
+            influenceEnd={leader.influenceEnd}
+            influenceStart={leader.influenceStart}
+            synopsis={leader.synopsis}
+            thumbUrl={leader.thumbUrl}
+          />
+        ))}
       </div>
     </div>
   )
