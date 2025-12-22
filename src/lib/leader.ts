@@ -14,6 +14,7 @@ export const LEADERS = [
     thumbUrl:
       'https://render.fineartamerica.com/images/rendered/default/print/6/8/break/images/artworkimages/medium/3/the-emperor-gaius-julius-caesar-peter-paul-rubens.jpg',
     synopsis: `Julius Caesar was a Roman general and statesman who played a crucial role in the transformation of the Roman Republic into the Roman Empire. He was appointed dictator perpetuo in 44 BCE, which effectively made him the absolute ruler of Rome. His military conquests, political reforms, and personal charisma left an indelible mark on Roman history and beyond.`,
+    traits: ['Dictator', 'General', 'Reformer', 'Roman'],
   },
   {
     id: 'genghis',
@@ -28,6 +29,7 @@ export const LEADERS = [
     thumbUrl:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLmPCCUXBed77Zfhu3kAKl_KY1TI8jd7J9Mw&s',
     synopsis: `Genghis Khan was the founder of the Mongol Empire, which became the largest contiguous land empire in history. He unified the Mongol tribes and launched invasions that stretched from Eastern Europe to East Asia, leaving a profound impact on the political, cultural, and economic landscape of Eurasia.`,
+    traits: ['Conqueror', 'Strategist', 'Unifier'],
   },
   {
     id: 'victoria',
@@ -42,6 +44,7 @@ export const LEADERS = [
     thumbUrl:
       'https://upload.wikimedia.org/wikipedia/commons/e/e3/Queen_Victoria_by_Bassano.jpg',
     synopsis: `Queen Victoria reigned over the British Empire from 1837 to 1901, a period often referred to as the Victorian Era. Her reign saw significant industrial, cultural, political, scientific, and military changes within the United Kingdom and its colonies. Victoria's long rule and the expansion of the British Empire during her reign had a lasting impact on the world.`,
+    traits: ['Monarch', 'Empress', 'Reformer'],
   },
   {
     id: 'alexander',
@@ -56,5 +59,6 @@ export const LEADERS = [
     thumbUrl:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Alexander_the_Great_mosaic_%28cropped%29.jpg/250px-Alexander_the_Great_mosaic_%28cropped%29.jpg',
     synopsis: `Alexander III, known as Alexander the Great, was a Macedonian king who created one of the largest empires of the ancient world. He conquered much of the known world, stretching from Greece to northwestern India, and his conquests had a lasting impact on the development of Greek culture and the spread of Hellenistic civilization.`,
+    traits: ['Conqueror', 'Strategist', 'Cultural Influencer'],
   },
 ]

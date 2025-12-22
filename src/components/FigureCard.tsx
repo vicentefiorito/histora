@@ -1,3 +1,4 @@
+import { TraitBadge } from './TraitBadge'
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from './ui/card'
 
 export type Figure = {
@@ -10,6 +11,7 @@ export type Figure = {
   association: string // this is the association of any historical figure, can be an empire or a kingdom or a state or any other movement
   influenceStart: number // this is the start of the period of importance
   influenceEnd: number // this is the end of the period of importance
+  traits: string[] // this is a list of traits that the historical figure has, can be anything from "wise" to "brave" to "cunning"
 }
 
 type FigureCardProps = Figure & { thumbUrl: string; synopsis: string }
@@ -26,6 +28,7 @@ export function FigureCard({
   influenceEnd,
   thumbUrl,
   synopsis,
+  traits,
 }: FigureCardProps) {
   return (
     <div className="mb-6">
@@ -120,13 +123,21 @@ export function FigureCard({
           </div>
         </CardContent>
 
-        <CardFooter className="bg-[#faf8f5] border-t-2 border-gold-50 flex justify-end w-full">
-          <button
-            className="bg-gold-100 text-white text-sm uppercase px-4 py-2 m-2 rounded-sm font-bold cursor-pointer tracking-wider hover:bg-[#8b6914] hover:-translate-y-0.5 transition"
-            onClick={() => console.log(`View profile of ${name}`)}
-          >
-            View Profile →
-          </button>
+        <CardFooter className="bg-[#faf8f5] border-t-2 border-gold-50 w-full">
+          <div className="flex w-full items-start justify-between gap-4">
+            <div className="m-4 grid grid-cols-[repeat(3,max-content)] gap-x-2 gap-y-2 min-w-0">
+              {traits.map((trait, index) => (
+                <TraitBadge key={index} name={trait} />
+              ))}
+            </div>
+
+            <button
+              className="m-4 shrink-0 self-start h-fit bg-gold-100 text-white text-sm uppercase px-4 py-2 rounded-sm font-bold cursor-pointer tracking-wider hover:bg-[#8b6914] hover:-translate-y-0.5 transition"
+              onClick={() => console.log(`View profile of ${name}`)}
+            >
+              View Profile →
+            </button>
+          </div>
         </CardFooter>
       </Card>
     </div>

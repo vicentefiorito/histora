@@ -59,6 +59,7 @@ function RouteComponent() {
             influenceStart={leader.influenceStart}
             synopsis={leader.synopsis}
             thumbUrl={leader.thumbUrl}
+            traits={leader.traits}
           />
         ))}
       </div>
