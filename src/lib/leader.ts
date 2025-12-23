@@ -1,5 +1,3 @@
-import type { Figure } from '@/components/FigureCard'
-
 export const LEADERS = [
   {
     id: 'caesar',
@@ -29,7 +27,7 @@ export const LEADERS = [
     thumbUrl:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLmPCCUXBed77Zfhu3kAKl_KY1TI8jd7J9Mw&s',
     synopsis: `Genghis Khan was the founder of the Mongol Empire, which became the largest contiguous land empire in history. He unified the Mongol tribes and launched invasions that stretched from Eastern Europe to East Asia, leaving a profound impact on the political, cultural, and economic landscape of Eurasia.`,
-    traits: ['Conqueror', 'Strategist', 'Unifier'],
+    traits: ['Conqueror', 'Strategist', 'Unifier', 'Emperor'],
   },
   {
     id: 'victoria',

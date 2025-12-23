@@ -27,7 +27,7 @@ export default function FigureSelect({
 }: FigureSelectProps) {
   return (
     <div>
-      <h3 className="text-left text-xl text-slate-600 font-semibold">
+      <h3 className="text-left text-lg text-maroon-text font-semibold">
         {label}
       </h3>
       <Select value={value} onValueChange={(val) => onChange(val)}>

@@ -45,7 +45,9 @@ export function FigureCard({
         "
       >
         <CardHeader className="border-b-4 border-[#8b6914] bg-linear-120 from-[#ebe5dc] to-[#d4c5a9] mt-0">
-          <CardTitle className="font-bold text-4xl mt-8 mb-2">{name}</CardTitle>
+          <CardTitle className="text-maroon-text font-bold text-4xl mt-8 mb-2">
+            {name}
+          </CardTitle>
 
           <div className="flex flex-wrap justify-between items-end gap-2 pb-4">
             <h3 className="text-[#8b6914] font-semibold italic text-xl">
