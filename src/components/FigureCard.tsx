@@ -32,7 +32,18 @@ export function FigureCard({
 }: FigureCardProps) {
   return (
     <div className="mb-6">
-      <Card className="rounded-none py-0">
+      <Card
+        className="
+            rounded-none py-0
+            bg-white
+            border border-[#e7dcc8]
+            ring-1 ring-black/5
+            shadow-[0_10px_28px_-18px_rgba(43,29,11,0.30)]
+            transition-all duration-200
+            hover:-translate-y-0.5
+            hover:shadow-[0_18px_40px_-22px_rgba(43,29,11,0.45)]
+        "
+      >
         <CardHeader className="border-b-4 border-[#8b6914] bg-linear-120 from-[#ebe5dc] to-[#d4c5a9] mt-0">
           <CardTitle className="font-bold text-4xl mt-8 mb-2">{name}</CardTitle>
 
@@ -50,12 +61,11 @@ export function FigureCard({
 
         <CardContent className="grid gap-4 p-6 md:grid-cols-[220px_1fr]">
           {/* Thumbnail */}
-          <div className="w-full max-w-55 aspect-square border-4 border-[#8b6914] overflow-hidden bg-[#faf8f5]">
+          <div className="relative aspect-3/4 mb-6 border-[3px]  border-[#d6c7a1] p-1 bg-white">
             <img
               src={thumbUrl}
-              alt={id}
+              alt={name}
               className="w-full h-full object-cover object-top"
-              loading="lazy"
             />
           </div>
 
@@ -124,13 +134,23 @@ export function FigureCard({
         </CardContent>
 
         <CardFooter className="bg-[#faf8f5] border-t-2 border-gold-50 w-full">
-          <div className="flex w-full items-start justify-between gap-4">
-            <div className="m-4 grid grid-cols-[repeat(3,max-content)] gap-x-2 gap-y-2 min-w-0">
-              {traits.map((trait, index) => (
-                <TraitBadge key={index} name={trait} />
-              ))}
+          <div className="flex w-full items-start justify-between gap-6">
+            {/* Traits block */}
+            <div className="m-4 min-w-0">
+              <div className="flex items-center gap-3 mb-2">
+                <p className="text-[11px] font-bold uppercase tracking-wider text-[#8b6914]">
+                  Traits
+                </p>
+              </div>
+
+              <div className="grid grid-cols-[repeat(3,max-content)] gap-x-2 gap-y-2">
+                {traits.map((trait, index) => (
+                  <TraitBadge key={index} name={trait} />
+                ))}
+              </div>
             </div>
 
+            {/* CTA */}
             <button
               className="m-4 shrink-0 self-start h-fit bg-gold-100 text-white text-sm uppercase px-4 py-2 rounded-sm font-bold cursor-pointer tracking-wider hover:bg-[#8b6914] hover:-translate-y-0.5 transition"
               onClick={() => console.log(`View profile of ${name}`)}

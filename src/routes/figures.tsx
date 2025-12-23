@@ -1,5 +1,6 @@
 import { FigureCard } from '@/components/FigureCard'
 import FiguresSelect from '@/components/FiguresSelect'
+import SearchBar from '@/components/ui/SearchBar'
 import { LEADERS } from '@/lib/leader'
 import { SelectOption } from '@/lib/types'
 import { createFileRoute } from '@tanstack/react-router'
@@ -20,6 +21,12 @@ const erasOptions: SelectOption[] = [
 function RouteComponent() {
   // handles the era state
   const [selectedEra, setSelectedEra] = useState<string>('')
+  const [search, setSearch] = useState<string>('')
+
+  // filters the leaders based on the search
+  const filteredLeaders = LEADERS.filter((l) =>
+    l.name.toLowerCase().includes(search),
+  )
 
   return (
     <div className="min-h-screen bg-cream-100 pt-6">
@@ -32,35 +39,22 @@ function RouteComponent() {
           across time and continents
         </p>
       </div>
-      <div className="flex justify-center mt-8  ">
-        <div className="flex  p-6 bg-white m-4 border-gold-50 border-2 rounded-lg w-400">
-          <div className="">
-            <FiguresSelect
-              value={selectedEra}
-              onChange={setSelectedEra}
-              label="Time Period"
-              options={erasOptions}
-            />
+      <div className="flex justify-center mt-8">
+        <div className="flex flex-col p-6 bg-white m-4 border-gold-50 border-2 rounded-lg w-400">
+          <div className="p-4">
+            <SearchBar value={search} onChange={setSearch} />
           </div>
+          <FiguresSelect
+            value={selectedEra}
+            onChange={setSelectedEra}
+            label="Time Period"
+            options={erasOptions}
+          />
         </div>
       </div>
       <div className="grid grid-cols-2 max-w-400 mx-auto gap-8 mb-8">
-        {LEADERS.map((leader) => (
-          <FigureCard
-            key={leader.id}
-            association={leader.association}
-            birthYear={leader.birthYear}
-            deathYear={leader.deathYear}
-            id={leader.id}
-            name={leader.name}
-            title={leader.title}
-            region={leader.region}
-            influenceEnd={leader.influenceEnd}
-            influenceStart={leader.influenceStart}
-            synopsis={leader.synopsis}
-            thumbUrl={leader.thumbUrl}
-            traits={leader.traits}
-          />
+        {filteredLeaders.map((leader) => (
+          <FigureCard key={leader.id} {...leader} />
         ))}
       </div>
     </div>
