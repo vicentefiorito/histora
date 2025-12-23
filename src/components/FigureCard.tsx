@@ -7,6 +7,7 @@ export type Figure = {
   title: string
   birthYear: number
   deathYear: number
+  birthPlace: string
   region: string
   association: string // this is the association of any historical figure, can be an empire or a kingdom or a state or any other movement
   influenceStart: number // this is the start of the period of importance
@@ -22,6 +23,7 @@ export function FigureCard({
   title,
   birthYear,
   deathYear,
+  birthPlace,
   region,
   association,
   influenceStart,
@@ -92,10 +94,10 @@ export function FigureCard({
 
               <div className="px-4 py-3 rounded-md bg-[#faf8f5] border border-[#eee3d0]">
                 <p className="text-[11px] font-bold uppercase tracking-wider text-[#8b6914]">
-                  Region
+                  BithPlace
                 </p>
                 <p className="mt-1 text-sm font-semibold text-[#2b1d0b] line-clamp-1">
-                  {region}
+                  {birthPlace}
                 </p>
               </div>
             </div>
