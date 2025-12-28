@@ -1,5 +1,4 @@
 import FeaturesSection from '@/components/FeaturesSection'
-import { getTodayInHistory } from '@/server/todayInHistory'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
@@ -35,179 +34,179 @@ export const CREAM_200 = '#e8dccb'
 export const INK = '#1f3a5f'
 // export const GOLD = '#c9a24d'
 
-const eras = [
-  { id: 'ancient', label: 'Antiquity', from: -800, to: 500 },
-  { id: 'medieval', label: 'Middle Ages', from: 500, to: 1500 },
-  { id: 'early', label: 'Early Modern', from: 1500, to: 1800 },
-  { id: 'modern', label: 'Modern', from: 1800, to: 2025 },
-]
+// const eras = [
+//   { id: 'ancient', label: 'Antiquity', from: -800, to: 500 },
+//   { id: 'medieval', label: 'Middle Ages', from: 500, to: 1500 },
+//   { id: 'early', label: 'Early Modern', from: 1500, to: 1800 },
+//   { id: 'modern', label: 'Modern', from: 1800, to: 2025 },
+// ]
 
-const timelineMoments = [
-  {
-    year: 476,
-    title: 'Western Roman Empire dissolves',
-    lens: 'Power & Politics',
-    tags: ['Late Antiquity', 'Europe'],
-    summary:
-      'A symbolic endpoint for ancient Rome in the West; institutions transform rather than vanish.',
-    figures: ['Odoacer', 'Romulus Augustulus', 'Zeno'],
-    places: ['Ravenna', 'Rome'],
-  },
-  {
-    year: 622,
-    title: 'The Hijra',
-    lens: 'Ideas & Faith',
-    tags: ['Late Antiquity', 'Middle East'],
-    summary:
-      'A foundational migration marking the start of the Islamic calendar and a turning point in community formation.',
-    figures: ['Muhammad'],
-    places: ['Mecca', 'Medina'],
-  },
-  {
-    year: 1066,
-    title: 'Norman Conquest of England',
-    lens: 'Wars & Conflict',
-    tags: ['Middle Ages', 'Europe'],
-    summary:
-      'A dynastic and administrative shift that reshaped language, law, and elite culture.',
-    figures: ['William the Conqueror', 'Harold Godwinson'],
-    places: ['Hastings', 'London'],
-  },
-  {
-    year: 1453,
-    title: 'Fall of Constantinople',
-    lens: 'Wars & Conflict',
-    tags: ['Middle Ages', 'Eurasia'],
-    summary:
-      'A pivotal siege with wide ripple effects across trade, politics, and cultural memory.',
-    figures: ['Mehmed II', 'Constantine XI'],
-    places: ['Constantinople'],
-  },
-  {
-    year: 1492,
-    title: 'Columbian Exchange accelerates',
-    lens: 'Trade & Routes',
-    tags: ['Early Modern', 'Atlantic'],
-    summary:
-      'Ecological and economic transformations connect continents—often violently and unevenly.',
-    figures: ['Indigenous polities', 'European crowns'],
-    places: ['Caribbean', 'Iberia'],
-  },
-  {
-    year: 1687,
-    title: 'Principia Mathematica published',
-    lens: 'Science & Inventions',
-    tags: ['Early Modern', 'Europe'],
-    summary:
-      'A landmark synthesis in physics and mathematics shaping scientific methods for centuries.',
-    figures: ['Isaac Newton'],
-    places: ['London'],
-  },
-  {
-    year: 1789,
-    title: 'French Revolution begins',
-    lens: 'Power & Politics',
-    tags: ['Modern', 'Europe'],
-    summary:
-      'A political rupture that redefined sovereignty, citizenship, and the vocabulary of rights.',
-    figures: ['National Assembly', 'Louis XVI'],
-    places: ['Paris'],
-  },
-  {
-    year: 1918,
-    title: 'End of World War I',
-    lens: 'Wars & Conflict',
-    tags: ['Modern', 'Global'],
-    summary:
-      'Armistice and political reordering; empires dissolve, borders shift, and new states emerge.',
-    figures: ['Woodrow Wilson', 'Clemenceau', 'Lloyd George'],
-    places: ['Compiègne', 'Versailles'],
-  },
-  {
-    year: 1969,
-    title: 'Apollo 11 Moon landing',
-    lens: 'Science & Inventions',
-    tags: ['Modern', 'Global'],
-    summary:
-      'A technological milestone fueled by Cold War competition and massive systems engineering.',
-    figures: ['Neil Armstrong', 'Buzz Aldrin'],
-    places: ['Moon', 'Houston'],
-  },
-]
+// const timelineMoments = [
+//   {
+//     year: 476,
+//     title: 'Western Roman Empire dissolves',
+//     lens: 'Power & Politics',
+//     tags: ['Late Antiquity', 'Europe'],
+//     summary:
+//       'A symbolic endpoint for ancient Rome in the West; institutions transform rather than vanish.',
+//     figures: ['Odoacer', 'Romulus Augustulus', 'Zeno'],
+//     places: ['Ravenna', 'Rome'],
+//   },
+//   {
+//     year: 622,
+//     title: 'The Hijra',
+//     lens: 'Ideas & Faith',
+//     tags: ['Late Antiquity', 'Middle East'],
+//     summary:
+//       'A foundational migration marking the start of the Islamic calendar and a turning point in community formation.',
+//     figures: ['Muhammad'],
+//     places: ['Mecca', 'Medina'],
+//   },
+//   {
+//     year: 1066,
+//     title: 'Norman Conquest of England',
+//     lens: 'Wars & Conflict',
+//     tags: ['Middle Ages', 'Europe'],
+//     summary:
+//       'A dynastic and administrative shift that reshaped language, law, and elite culture.',
+//     figures: ['William the Conqueror', 'Harold Godwinson'],
+//     places: ['Hastings', 'London'],
+//   },
+//   {
+//     year: 1453,
+//     title: 'Fall of Constantinople',
+//     lens: 'Wars & Conflict',
+//     tags: ['Middle Ages', 'Eurasia'],
+//     summary:
+//       'A pivotal siege with wide ripple effects across trade, politics, and cultural memory.',
+//     figures: ['Mehmed II', 'Constantine XI'],
+//     places: ['Constantinople'],
+//   },
+//   {
+//     year: 1492,
+//     title: 'Columbian Exchange accelerates',
+//     lens: 'Trade & Routes',
+//     tags: ['Early Modern', 'Atlantic'],
+//     summary:
+//       'Ecological and economic transformations connect continents—often violently and unevenly.',
+//     figures: ['Indigenous polities', 'European crowns'],
+//     places: ['Caribbean', 'Iberia'],
+//   },
+//   {
+//     year: 1687,
+//     title: 'Principia Mathematica published',
+//     lens: 'Science & Inventions',
+//     tags: ['Early Modern', 'Europe'],
+//     summary:
+//       'A landmark synthesis in physics and mathematics shaping scientific methods for centuries.',
+//     figures: ['Isaac Newton'],
+//     places: ['London'],
+//   },
+//   {
+//     year: 1789,
+//     title: 'French Revolution begins',
+//     lens: 'Power & Politics',
+//     tags: ['Modern', 'Europe'],
+//     summary:
+//       'A political rupture that redefined sovereignty, citizenship, and the vocabulary of rights.',
+//     figures: ['National Assembly', 'Louis XVI'],
+//     places: ['Paris'],
+//   },
+//   {
+//     year: 1918,
+//     title: 'End of World War I',
+//     lens: 'Wars & Conflict',
+//     tags: ['Modern', 'Global'],
+//     summary:
+//       'Armistice and political reordering; empires dissolve, borders shift, and new states emerge.',
+//     figures: ['Woodrow Wilson', 'Clemenceau', 'Lloyd George'],
+//     places: ['Compiègne', 'Versailles'],
+//   },
+//   {
+//     year: 1969,
+//     title: 'Apollo 11 Moon landing',
+//     lens: 'Science & Inventions',
+//     tags: ['Modern', 'Global'],
+//     summary:
+//       'A technological milestone fueled by Cold War competition and massive systems engineering.',
+//     figures: ['Neil Armstrong', 'Buzz Aldrin'],
+//     places: ['Moon', 'Houston'],
+//   },
+// ]
 
-const lensTiles = [
-  {
-    title: 'Power & Politics',
-    icon: Landmark,
-    hint: 'Revolutions, states, law',
-    example: 'Try: “Congress of Vienna”',
-  },
-  {
-    title: 'Wars & Conflict',
-    icon: Swords,
-    hint: 'Campaigns, strategy',
-    example: 'Try: “Hannibal”',
-  },
-  {
-    title: 'Trade & Routes',
-    icon: Globe2,
-    hint: 'Goods, networks',
-    example: 'Try: “Silk Road”',
-  },
-  {
-    title: 'Ideas & Faith',
-    icon: ScrollText,
-    hint: 'Beliefs, philosophy',
-    example: 'Try: “Stoicism”',
-  },
-  {
-    title: 'Science & Inventions',
-    icon: FlaskConical,
-    hint: 'Discoveries',
-    example: 'Try: “Printing press”',
-  },
-  {
-    title: 'Art & Culture',
-    icon: LibraryBig,
-    hint: 'Works, styles',
-    example: 'Try: “Renaissance”',
-  },
-  {
-    title: 'Daily Life',
-    icon: Users,
-    hint: 'Food, work, norms',
-    example: 'Try: “Medieval bakery”',
-  },
-  {
-    title: 'Sources',
-    icon: BookOpen,
-    hint: 'Evidence, citations',
-    example: 'Try: “Primary sources 1453”',
-  },
-]
+// const lensTiles = [
+//   {
+//     title: 'Power & Politics',
+//     icon: Landmark,
+//     hint: 'Revolutions, states, law',
+//     example: 'Try: “Congress of Vienna”',
+//   },
+//   {
+//     title: 'Wars & Conflict',
+//     icon: Swords,
+//     hint: 'Campaigns, strategy',
+//     example: 'Try: “Hannibal”',
+//   },
+//   {
+//     title: 'Trade & Routes',
+//     icon: Globe2,
+//     hint: 'Goods, networks',
+//     example: 'Try: “Silk Road”',
+//   },
+//   {
+//     title: 'Ideas & Faith',
+//     icon: ScrollText,
+//     hint: 'Beliefs, philosophy',
+//     example: 'Try: “Stoicism”',
+//   },
+//   {
+//     title: 'Science & Inventions',
+//     icon: FlaskConical,
+//     hint: 'Discoveries',
+//     example: 'Try: “Printing press”',
+//   },
+//   {
+//     title: 'Art & Culture',
+//     icon: LibraryBig,
+//     hint: 'Works, styles',
+//     example: 'Try: “Renaissance”',
+//   },
+//   {
+//     title: 'Daily Life',
+//     icon: Users,
+//     hint: 'Food, work, norms',
+//     example: 'Try: “Medieval bakery”',
+//   },
+//   {
+//     title: 'Sources',
+//     icon: BookOpen,
+//     hint: 'Evidence, citations',
+//     example: 'Try: “Primary sources 1453”',
+//   },
+// ]
 
-const collections = [
-  {
-    title: 'The Fall of Rome',
-    meta: 'Late Antiquity • Politics • War',
-    counts: '18 moments • 42 figures',
-  },
-  {
-    title: 'The Silk Road',
-    meta: 'Eurasia • Trade • Ideas',
-    counts: '22 moments • 55 figures',
-  },
-  {
-    title: 'Age of Revolutions',
-    meta: '1750–1900 • Global',
-    counts: '20 moments • 61 figures',
-  },
-  {
-    title: 'Printing & the Public Sphere',
-    meta: 'Early Modern • Culture',
-    counts: '14 moments • 38 figures',
-  },
-]
+// const collections = [
+//   {
+//     title: 'The Fall of Rome',
+//     meta: 'Late Antiquity • Politics • War',
+//     counts: '18 moments • 42 figures',
+//   },
+//   {
+//     title: 'The Silk Road',
+//     meta: 'Eurasia • Trade • Ideas',
+//     counts: '22 moments • 55 figures',
+//   },
+//   {
+//     title: 'Age of Revolutions',
+//     meta: '1750–1900 • Global',
+//     counts: '20 moments • 61 figures',
+//   },
+//   {
+//     title: 'Printing & the Public Sphere',
+//     meta: 'Early Modern • Culture',
+//     counts: '14 moments • 38 figures',
+//   },
+// ]
 
 function clamp(n: number, min: number, max: number) {
   return Math.max(min, Math.min(max, n))
@@ -426,26 +425,26 @@ function formatYear(y: number) {
 // }
 
 export default function HistoraLandingMock() {
-  const [query, setQuery] = useState('')
-  const [era, setEra] = useState(eras[1].id)
-  const eraObj = useMemo(() => eras.find((e) => e.id === era)!, [era])
+  // const [query, setQuery] = useState('')
+  // const [era, setEra] = useState(eras[1].id)
+  // const eraObj = useMemo(() => eras.find((e) => e.id === era)!, [era])
 
-  const [year, setYear] = useState(1453)
-  const yearClamped = clamp(year, eraObj.from, eraObj.to)
+  // const [year, setYear] = useState(1453)
+  // const yearClamped = clamp(year, eraObj.from, eraObj.to)
 
-  const moment = useMemo(() => {
-    // pick closest moment to the selected year
-    return timelineMoments.reduce((best, m) =>
-      Math.abs(m.year - yearClamped) < Math.abs(best.year - yearClamped)
-        ? m
-        : best,
-    )
-  }, [yearClamped])
+  // const moment = useMemo(() => {
+  //   // pick closest moment to the selected year
+  //   return timelineMoments.reduce((best, m) =>
+  //     Math.abs(m.year - yearClamped) < Math.abs(best.year - yearClamped)
+  //       ? m
+  //       : best,
+  //   )
+  // }, [yearClamped])
 
-  const sliderPct = useMemo(() => {
-    const span = eraObj.to - eraObj.from
-    return ((yearClamped - eraObj.from) / span) * 100
-  }, [yearClamped, eraObj])
+  // const sliderPct = useMemo(() => {
+  //   const span = eraObj.to - eraObj.from
+  //   return ((yearClamped - eraObj.from) / span) * 100
+  // }, [yearClamped, eraObj])
 
   return (
     <div className="min-h-screen bg-cream-50">

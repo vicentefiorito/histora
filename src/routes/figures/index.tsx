@@ -6,7 +6,7 @@ import { SelectOption } from '@/lib/types'
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
 
-export const Route = createFileRoute('/figures')({
+export const Route = createFileRoute('/figures/')({
   component: RouteComponent,
 })
 
@@ -35,7 +35,7 @@ const regionOptions: SelectOption[] = [
   { value: 'south-asia', label: 'South Asia' },
   { value: 'central-asia', label: 'Central Asia' },
   { value: 'middle-east', label: 'Middle East' },
-  { value: 'africa', label: 'Sub-Saharan Africa' },
+  { value: 'africa', label: 'Africa' },
   { value: 'americas', label: 'Americas' },
 ]
 
@@ -56,7 +56,8 @@ function RouteComponent() {
       !selectedEra || getEra(leader.influenceStart) === selectedEra
 
     // Region filter - only apply if a region is selected
-    const matchesRegion = !selectedRegion || leader.region === selectedRegion
+    const matchesRegion =
+      !selectedRegion || leader.regions.includes(selectedRegion)
 
     // Leader must match ALL active filters
     return matchesSearch && matchesEra && matchesRegion

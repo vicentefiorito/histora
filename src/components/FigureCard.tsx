@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router'
 import { TraitBadge } from './TraitBadge'
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from './ui/card'
 
@@ -8,7 +9,7 @@ export type Figure = {
   birthYear: number
   deathYear: number
   birthPlace: string
-  region: string
+  regions: string[]
   association: string // this is the association of any historical figure, can be an empire or a kingdom or a state or any other movement
   influenceStart: number // this is the start of the period of importance
   influenceEnd: number // this is the end of the period of importance
@@ -24,7 +25,7 @@ export function FigureCard({
   birthYear,
   deathYear,
   birthPlace,
-  region,
+  regions,
   association,
   influenceStart,
   influenceEnd,
@@ -85,19 +86,19 @@ export function FigureCard({
             <div className="grid gap-3 sm:grid-cols-2">
               <div className="px-4 py-3 rounded-md bg-[#faf8f5] border border-[#eee3d0]">
                 <p className="text-[11px] font-bold uppercase tracking-wider text-[#8b6914]">
-                  Associated with
+                  BithPlace
                 </p>
                 <p className="mt-1 text-sm font-semibold text-[#2b1d0b] line-clamp-1">
-                  {association}
+                  {birthPlace}
                 </p>
               </div>
 
               <div className="px-4 py-3 rounded-md bg-[#faf8f5] border border-[#eee3d0]">
                 <p className="text-[11px] font-bold uppercase tracking-wider text-[#8b6914]">
-                  BithPlace
+                  Associated with
                 </p>
                 <p className="mt-1 text-sm font-semibold text-[#2b1d0b] line-clamp-1">
-                  {birthPlace}
+                  {association}
                 </p>
               </div>
             </div>
@@ -155,12 +156,13 @@ export function FigureCard({
             </div>
 
             {/* CTA */}
-            <button
-              className="m-4 shrink-0 self-start h-fit bg-gold-100 text-white text-sm uppercase px-4 py-2 rounded-sm font-bold cursor-pointer tracking-wider hover:bg-[#8b6914] hover:-translate-y-0.5 transition"
-              onClick={() => console.log(`View profile of ${name}`)}
+            <Link
+              to="/figures/$id"
+              params={{ id: id }}
+              className="m-4 shrink-0 self-start h-fit bg-gold-100 text-white text-sm uppercase px-4 py-2 rounded-sm font-bold cursor-pointer tracking-wider hover:bg-[#8b6914] hover:-translate-y-0.5 transition inline-block"
             >
               View Profile →
-            </button>
+            </Link>
           </div>
         </CardFooter>
       </Card>
